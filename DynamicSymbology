@@ -1,0 +1,82 @@
+var Symbo1 = $feature.TYPE_STATUS
+var Symbo2 = $feature.PROP_STATUS
+var Symbo3 = $feature.LB_IDENTIFIER
+
+//YELLOW SQUARE = TRASH, IN PROCESS, IS NOT LB
+if(Symbo1 == "TRASH")
+{
+	if(Symbo2 == 1)
+	{
+		if(Symbo3 == 0)
+		return "TRASH"
+		}
+	}
+
+//RED SQAURE = BLIGHT, IN PROCESS, IS NOT LB
+if(Symbo1 == "BLIGHT")
+{
+	if(Symbo2 == 1)
+	{
+		if(Symbo3 == 0)
+		return "BLIGHT"
+	}
+}
+
+//GREY SQUARE = FURTHER INVEST, IN PROCESS, IS NOT LB
+if(Symbo1 == "FURTHER INVESTIGATION REQ")
+{
+	if(Symbo2 == 1)
+	{
+		if(Symbo3 == 0)
+		return "FURTHER INVESTIGATION REQ"
+	}
+}
+
+
+//BROWN SQUARE = ANY, FUTURE, IS LB
+if(Symbo2 == 3)
+	{
+		if(Symbo3 == 1)
+		return "FUTURE LANDBANK"
+	}
+
+
+//PURPLE SQUARE = ANY, IN PROCESS, IS LB
+if(Symbo2 == 1)
+	{
+		if(Symbo3 == 1)
+		return "LANDBANK IN PROCESS"
+	}
+
+
+//DARK GREEN SQUARE = ANY, COMPLETE & IS LB
+if(Symbo2 == 2)
+{
+	if(Symbo3 == 1)
+	return "COMPLETED LANDBANK"
+}
+
+// LIGHT GREEN SQUARE = ANY, COMPLETED, IS NOT LB
+if(Symbo2 == 2)
+{
+	if(Symbo3 == 0)
+	return "COMPLETED"
+}
+
+
+//RED X = ANY, FUTURE, IS NOT LB
+if(Symbo2 == 3)
+{
+	if(Symbo3 ==0)
+	return "ERROR"
+}
+
+//WHITE CIRCLE = ANY, POLK, EITHER
+if(Symbo2 == 4)
+return "POLK"
+
+
+else
+{
+return "other group"
+}
