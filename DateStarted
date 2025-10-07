@@ -1,0 +1,11 @@
+#THIS FORCES THE FIELD "DATE STARTED" TO POPULATE WITH TODAYS DATE BUT ONLY IF ITS BLANK
+
+var dateField = $feature.DATE_STARTED //Change this to your date field
+
+if (IsEmpty(dateField)){
+  return Now()
+}
+
+else {
+  return dateField
+}
