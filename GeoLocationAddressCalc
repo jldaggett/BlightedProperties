@@ -1,0 +1,12 @@
+#THIS AUTOPOPULATE THE 'LOCATION ADDRESS' FIELD BASED ON THE CORRESPONDING ADDRESS FIELD IN AN INTERSECTING POLYGON
+
+var BufferedFeature = Buffer($feature, .1, 'meters')
+var intersectLayer1 = Intersects(FeatureSetByName($map, "BLIGHTED PROPERTIES"),BufferedFeature)
+var intersectLayer2 = Intersects(FeatureSetByName($map, "PARCELS"),BufferedFeature)
+
+var featureLayer1 = First(intersectLayer1)
+var featureLayer2 = First(intersectLayer2)
+
+if(featureLayer1 != null) {
+    return featureLayer2.LocationAd + ", " + featureLayer2. LocationCi
+}
