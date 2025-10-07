@@ -1,0 +1,12 @@
+#SIMILAR TO GEOLOCATIONADDRESSCALC TOOL, BUT THIS ONE GRABS MULTIPLE FIELDS IN THE INTERSECTING POLYGON THAT MAKE UP THE ENTIRE OWNER CONTACT ADDRESS
+
+var BufferedFeature = Buffer($feature, .1, 'meters')
+var intersectLayer1 = Intersects(FeatureSetByName($map, "BLIGHTED PROPERTIES"),BufferedFeature)
+var intersectLayer2 = Intersects(FeatureSetByName($map, "PARCELS"),BufferedFeature)
+
+var featureLayer1 = First(intersectLayer1)
+var featureLayer2 = First(intersectLayer2)
+
+if(featureLayer1 != null) {
+    return featureLayer2.OwnerCon_1 + ", " + featureLayer2.OwnerCon_2 + " " + featureLayer2.OwnerCon_3 + " " + featureLayer2.OwnerCon_4
+}
