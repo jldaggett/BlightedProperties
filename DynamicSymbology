@@ -3,12 +3,12 @@ var Symbo2 = $feature.PROP_STATUS
 var Symbo3 = $feature.LB_IDENTIFIER
 
 //YELLOW SQUARE = TRASH, IN PROCESS, IS NOT LB
-if(Symbo1 == "TRASH")
+if(Symbo1 == "CLEAN UP")
 {
 	if(Symbo2 == 1)
 	{
 		if(Symbo3 == 0)
-		return "TRASH"
+		return "CLEAN UP"
 		}
 	}
 
